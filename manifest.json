@@ -1,0 +1,21 @@
+{
+  "name": "Shua Shua Helper",
+  "version": "0.0.1",
+  "description": "Helps you navigate LeetCode",
+  "permissions": ["tabs", "activeTab", "declarativeContent"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "page_action": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://leetcode-cn.com/problems/*"
+      ],
+      "run_at": "document_idle",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "manifest_version": 2
+}
